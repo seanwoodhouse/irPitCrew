@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>irPitCrew</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+      <meta name="apple-mobile-web-app-capable" content="yes" >
+      <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" sizes="127x127" href="apple-icons/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="57x57" href="apple-icons/apple-touch-icon-57x57.png">
+            <link rel="apple-touch-icon-precomposed" sizes="127x127" href="apple-icons/apple-touch-icon-precomposed.png">
+              <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-icons/apple-touch-icon-57x57-precomposed.png">
+                <link rel="icon" type="image/png" href="apple-icons/apple-touch-icon-57x57.png" />
+
+                <script src="parseYaml.js"></script>
+                <style type='text/css'>
+                  body {color:rgb(220, 220, 220);}
+                  div.ex {font-size:40px; padding-left:5px;padding-right:10px;}
+                  span.val {font-weight:bold;
+                  color:rgb(220, 220, 20);}
+                  button.fuelButtonClass { font-size:30px; }
+                  #FuelRequired { padding-left:25px; padding-right:25px; border: 1px solid rgb(220, 220, 220); }
+                  #FuelRequiredTags { font-size:30px; font-weight:normal; }
+                  #PitAvailable { font-size:30px; font-weight:normal; }
+                  #PitAvailableLabel { font-size:30px; font-weight:normal; }
+                  #PitAvailableLabel2 { font-size:30px; font-weight:normal; }
+                  #remainingLapsTag { font-size:30px; font-weight:normal; }
+                  #LapsOfFuelBorder { padding-left:25px; padding-right:25px; padding-top:5px; padding-bottom:10px; border: 1px solid rgb(220, 220, 220); }
+                  #LapsOfFuelTag { font-size:30px; font-weight:normal; }
+                </style>
+              </head>
+
+    <body style="background-color:#000000">
+    <div id="divData" class="ex" >
+
+      <!-- fixed position doesn't work on safari (iphone3 anyway) -->
+      <!-- <table style="position:fixed; width:100%; z-index: 1; top:0px; left:0px; height:80px; border: 1px solid rgb(220, 220, 220);" > -->
+      <table style="position:relative; width:100%; height:65px; border: 1px solid rgb(220, 220, 220); background-color:#222222" >
+        <tr>
+
+          <td style="position:relative; width:30%; text-align:left; padding-left:10px; ">
+               <span id="remainingLabel">Remaining</span>
+          </td>
+
+          <td style="position:relative; width:40%; text-align:center;">
+            <span>
+              <span id="remainingLapsTag"></span><span id="remainingLapsMin" class="val">---</span><span id="remainingLapsSeparator" class="val"></span><span id="remainingLapsMax" class="val"></span> laps
+            </span>
+          </td>
+          <td style="position:relative; width:30%; text-align:right; padding-right:10px;">
+            <span id="remainingTime" class="val">--:--:--</span>
+          </td>
+        </tr>
+      </table>
+
+
+      <table style="width:100%; border: 1px solid rgb(220, 220, 220);">
+        <col style="width:35%">
+          <col style="width:30%">
+            <col style="width:35%">
+              <tbody>
+                <tr>
+                  <!-- The "resize" callbacks are not working correctly so they are commented out. The elements will resize once on startup, or on
+                     refresh (F5) if changing the window size. The resize works when growing but not shrinking; they don't shrink.  I think the
+                     td element is unable to scale down because it has a canvas filling it, and the canvas size is based on td.
+                     Resize on refresh works for now.
+                 -->
+                  <td id="TiresIndicatorParent" style="border: 1px solid rgb(220, 220, 220);">
+                    <canvas id="TiresIndicator" height="400" style=" display:block;" >canvas not supported.</canvas>
+                  </td>
+                  <td id="LapsOfFuelIndicatorParent" style="border: 1px solid rgb(220, 220, 220);">
+                    <canvas id="LapsOfFuelIndicator" height="400" style=" display:block;" >canvas not supported.</canvas>
+                  </td>
+                  <td id="FuelIndicatorParent" style="border: 1px solid rgb(220, 220, 220);">
+                    <canvas id="FuelIndicator" height="400" style="display:block;">Canvas not supported.</canvas>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+      <table style="position:relative; width:100%; height:65px; border: 1px solid rgb(220, 220, 220); background-color:#222222" >
+        <tr>
+          <!--   -->
+          <td style="position:relative; text-align:left;">
+            <canvas id="connectionStatus" style="position:relative; top:5px" width="60" height="40" onclick="onConnectionStatusClick()" >Canvas not supported.</canvas>
+           <!--  <span id="h1">irPitCrew</span> -->
+            <span id="windshieldLabel" onclick="onWindshieldClick()">- WS</span>
+            <span id="fastRepairLabel" onclick="onFastRepairClick()">- FR -</span>
+          </td>
+          <td style="position:relative; text-align:right;">
+            <span id="PitAvailableLabel"></span>
+            <span id="PitAvailable"></span>
+            <span id="PitAvailableLabel2"></span>
+            <span id="FuelRequiredTags"></span>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+
+    <p style="border: 1px solid rgb(220, 220, 220);"></p>
+
+    <div style="border: 1px solid rgb(220, 220, 220);">
+      <p id="TrackName">Track: ---</p>
+      <div style="padding-left:10px; padding-right:10px; border: 1px solid rgb(220, 220, 220);">
+        <p>Go to the Garage, adjust Fuel Level, use these to estimate race fuel:</p>
+        <p>(don't forget the pace lap)</p>
+        <p>
+          - Time on Fuel: <span id="TimeOnFuel" style="text-decoration:underline;font-weight:bold;">---</span>
+        </p>
+        <p>
+          - Laps on Fuel: <span id="LapsOfFuel2" style="text-decoration:underline;font-weight:bold;">---</span>
+        </p>
+      </div>
+      <p>
+        - estimatedLapTime: <span id="estimatedLapTime"></span>
+      </p>
+      <p>
+        - estimatedLapFuel: <span id="estimatedLapFuel"></span>
+      </p>
+      <p>
+        LF: <span id="LFcoldPressure"></span> , RF: <span id="RFcoldPressure"></span> , LR: <span id="LRcoldPressure"></span> , RR: <span id="RRcoldPressure"></span>
+      </p>
+    </div>
+
+    <script src="irPitCrew.js"></script>
+    <script src="UpdateData.js"></script>
+    <script src="UpdateFields.js"></script>
+    <script src="FuelIndicator.js"></script>
+    <script src="LapsOfFuelIndicator.js"></script>
+    <script src="TiresIndicator.js"></script>
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", irPitCrew_Initialize);
+
+    </script>
+
+  </body>
+</html>

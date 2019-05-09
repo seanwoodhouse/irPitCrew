@@ -1,0 +1,47 @@
+
+Aug 27, 2017 - Version 1.02
+
+* Fixed bug causing unresponsive remote display when using with a mouse instead of touch screen.
+
+    Problem: If touch screen was supported, only touch controls were enabled; so mouse clicks did
+             not work. Mouse was only enabled when touch not available. This was working in most
+             cases since touch controls were not generally available on devices that use a mouse. 
+             Recently touch support became enabled for Chrome on Windows, and probably other browsers,
+             so the mouse input stopped working.
+             The fix was to enable both touch and mouse controls.
+
+* Added/updated options in Data\config.txt:
+
+    - ExtraLapsOfFuel: Option to add additional laps of fuel to the fuel calculation for an extra margin of safety.
+
+    - ServerPort: Default value is now 48900, since 80 causes too many conflicts.
+
+------------
+
+Jan 05, 2016 - Version 1.01
+
+* If you are upgrading from version 1.0, you can copy your existing "Data" directory to the new installation to keep your settings. Your config.txt will be updated with the new configuration values on the first run.
+
+* Added new options to the configuration file:
+
+   - UseDriverLapsRemaining 1: How to calculate fuel in lap based races. You can use either "your laps remaining" (default) or "leader laps remaining".  Using the leader's laps you may require less fuel, but if the leader has problems you might end up short on fuel.
+
+   - SkipClearOnApply 0: If set to 1, the #clear will not be sent before applying the settings on the remote display. 
+
+   - ServerPort 80: Configurable server port.
+
+* Added buttons (labels) to the Remote Display to toggle "Fast Repair" (FR) and "Windshield tearoff" (WS) on Apply. Touch/click the WS and FR labels to enable or disable them.  If the label is blue, the option will be enabled on Apply; if grey it will be disabled.
+
+------------
+
+Oct 27, 2015 - Version 1.0
+
+First release.
+
+------------
+------------
+
+Licenses:
+
+irPitCrew is based in part on the work of the libwebsockets project
+(https://libwebsockets.org)

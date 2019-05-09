@@ -1,0 +1,22 @@
+{
+    "short_name":   "irPitCrew",
+    "name":         "irPitCrew",
+    "icons": [
+    {
+      "src": "/apple-icons/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "127x127"
+    },
+    {
+      "src": "/apple-icons/apple-touch-icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    }
+    ],
+    "start_url": "/irPitCrew.html",
+    "background_color": "#000000",
+    "display":      "fullscreen",
+    "orientation":  "landscape",
+    "scope": "/",
+    "theme_color": "#000000"
+}

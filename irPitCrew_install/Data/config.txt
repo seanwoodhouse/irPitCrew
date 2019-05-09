@@ -1,0 +1,57 @@
+# Configuration File for irPitCrew.
+# 
+# This file is automatically created on startup if it does not exist.
+# 
+# New attributes will be added dynamically; for example, when a new car
+# is first encountered, a new DisplayCarFuelAsWeight_ value will be 
+# added to the file, which can then be configured manually.
+# 
+
+
+# Specify the fuel units to use on the remote display.
+# 0 for Metric, 1 for Imperial.
+# 
+DisplayFuelImperial 0
+
+# This applies to races based on number of laps (not relevant in timed races).
+# If this is set to 0, will use the session (race leader) remaining laps
+# to calculate fuel.
+# Set to 1 to use the your (driver) remaining laps instead.
+# Setting this to 1 gives you more fuel (unless you are the leader).
+# 
+UseDriverLapsRemaining 1
+
+# Skip the "clear" command on Apply.
+# If set to 1, irPitCrew will not unset the current iRacing black box settings for
+# tires, fuel, fast repair, etc. before applying the new settings.
+# This means values currently selected in iRacing will not be unset by irPitCrew.
+# 
+# This setting is useful if you are only using the App for fuel and don't 
+# want it to clear your tires / fast repair settings on Apply.
+# 
+# Another option if using this setting is to set "autoResetPitBox = 0" in
+# iRacing's app.ini file, which should give you one "clear" when you leave
+# the pit stall, then Auto Apply will do one Apply when driving back in.
+# 
+SkipClearOnApply 0
+
+# Port to use for server.
+# Change this value if the current port is blocked for some reason and the remote display
+# is unable to connect to the server. In general, select from the range 1024 - 49151.
+# When connecting from the remote display, specify the port by adding it to the
+# target address, for example:
+# For address 192.168.1.45 and port 5000, specify 192.168.1.45:5000 in the browser address bar.
+# 
+ServerPort 48900
+
+# Laps of Fuel to add to the calculated fuel value for an extra margin of safety.
+# For example: Set to 2 for two extra laps of fuel, or 0.5 for an extra half lap.
+# Default: 0
+# 
+ExtraLapsOfFuel 0
+
+# DisplayCarFuelAsWeight: 0 for volume (litres), 1 for weight (kg).
+# Manually adjust these per car based on how the car displays fuel.
+# 
+DisplayCarFuelAsWeight_hpdarx01c 1
+
