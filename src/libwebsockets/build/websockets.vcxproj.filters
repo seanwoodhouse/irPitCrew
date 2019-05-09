@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\lib\base64-decode.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\handshake.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libwebsockets.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\service.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\pollfd.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\output.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\parsers.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\context.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\sha-1.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\client.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\client-handshake.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\client-parser.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\lws-plat-win.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\server.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\server-handshake.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\md5\md5.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\private-libwebsockets.h">
+      <Filter>Headers Private</Filter>
+    </ClInclude>
+    <ClInclude Include="lws_config.h">
+      <Filter>Headers Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libwebsockets.h">
+      <Filter>Headers Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers Private">
+      <UniqueIdentifier>{F6E8CB0A-25A5-4158-9EAC-F86744C8022E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers Public">
+      <UniqueIdentifier>{10DE0CD2-8039-4662-9163-18D820556FA5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{7EFDB82E-7F49-439F-BA74-91CD1E3A6FF3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
