@@ -3,7 +3,7 @@ Pitstop management app for iRacing.
 
 Web Application Demo: [irPitCrew Demo](http://irpitcrewbucket.s3-website-us-west-2.amazonaws.com/irPitCrew.html)
 
-The demo runs the Web Application portion of the software (in the irPitCrew_install/Client/ directory), with a few modifications to simulate an ongoing race. Click the link from a web browser on your PC, phone, tablet, or other device to try out the Web Application.
+The demo runs the Web Application portion of the software (in the "irPitCrew_install/Client/" directory), with a few modifications to simulate an ongoing race. Click the link from a web browser on your PC, phone, tablet, or other device to try out the Web Application.
 
 ## Caveats (work in progress)
 
@@ -86,8 +86,8 @@ Notes:*
 
 Unzip the irPitCrew_xxx folder anywhere on your PC. Run irPitCrew.exe to start the Server application. It runs locally so it doesn't matter where you put the folder.
 
-To connect the Web Application, open a web browser on your phone or PC, then type in the address displayed by the Server.
+To connect the Web Application, open a web browser on your phone or PC then type in the address displayed by the Server. The Server address is the address of your PC on your local network, not on the internet. So in general, your PC and phone must be on the same wifi network to connect.
 
 If you have a previous installation of irPitCrew, you can copy your existing Data/ folder over the one in the new installation to keep your old config settings and lap time data (or back up the old Data directory and copy the new one over, safety first)
  
-Optional, check out the configuration settings in Data/config.txt
+Optional, check out the configuration settings in "irPitCrew_install/Data/config.txt"
