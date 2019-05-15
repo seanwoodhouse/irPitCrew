@@ -3,7 +3,7 @@ Pitstop management app for iRacing.
 
 Web Application Demo: [irPitCrew Demo](http://irpitcrewbucket.s3-website-us-west-2.amazonaws.com/irPitCrew.html)
 
-The demo runs the Web Application portion of the software (in the irPitCrew_install/Client/ directory), with a few modification to simulate an ongoing race. Click the link from a web browser on your PC, phone, tablet, or other device to try out the Web Application.
+The demo runs the Web Application portion of the software (in the irPitCrew_install/Client/ directory), with a few modifications to simulate an ongoing race. Click the link from a web browser on your PC, phone, tablet, or other device to try out the Web Application.
 
 ## Caveats (work in progress)
 
