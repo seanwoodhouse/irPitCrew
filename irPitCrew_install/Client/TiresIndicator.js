@@ -192,7 +192,7 @@ function DrawTiresIndicator()
 
     var ctx = canvasElement.getContext("2d");
 
-    console.log("Update TiresIndicator");
+    //console.log("Update TiresIndicator");
 
     // Clear screen
     ctx.fillStyle= "black";
