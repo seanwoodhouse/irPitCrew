@@ -24,7 +24,7 @@ Another very useful feature is the option to automatically apply the real-time f
  
 ## Design Objectives
 
-The Web Application was purposely designed to be as simple and intuitive as possible, so it may not be the prettiest interface. I've tried a few things to make it look nice but it always seems to add distractions and make the information harder to read.
+The Web Application interface was purposely designed to be as simple and intuitive as possible, so it may not be the prettiest. I've tried a few things to make it look nice but it always seems to add distractions and make the information harder to read.
 
 The goals when creating the interface were as follows:
 
