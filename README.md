@@ -5,7 +5,7 @@ Web Application Demo: [irPitCrew Demo](http://irpitcrewbucket.s3-website-us-west
 
 The demo runs the Web Application portion of the software (in the "irPitCrew_install/Client/" directory), with a few modifications to simulate an ongoing race. Click the link from a web browser on your PC, phone, tablet, or other device to try out the Web Application.
 
-## Caveats (work in progress)
+## Work in progress
 
  * The Web Application currently has some issues with phone orientation and resizing. It only resizes on refresh, so turn the phone sideways and refresh the page. Refresh using web browser controls and/or the green circle at the bottom left of the app. (Reason: HTML, complications with controls inside tables)
  * Widescreen/fullscreen mode doesn't work well on most mobile browsers. On android, Opera currently has the best fullscreen mode. Other browsers work but the address bar takes up a lot of the screen. (Reason: Mobile browser security has changed since my last release. Display modes are limited without a secure (SSL) connection.) 
