@@ -5,13 +5,6 @@ Web Application Demo: [irPitCrew Demo](http://irpitcrewbucket.s3-website-us-west
 
 The demo runs the Web Application portion of the software (in the "irPitCrew_install/Client/" directory), with a few modifications to simulate an ongoing race. Click the link from a web browser on your PC, phone, tablet, or other device to try out the Web Application.
 
-## Work in progress
-
- * The Web Application currently has some issues with phone orientation and resizing. It only resizes on refresh, so turn the phone sideways and refresh the page. Refresh using web browser controls and/or the green circle at the bottom left of the app. (Reason: HTML, complications with controls inside tables)
- * Widescreen/fullscreen mode doesn't work well on most mobile browsers. On android, Opera currently has the best fullscreen mode. Other browsers work but the address bar takes up a lot of the screen. (Reason: Mobile browser security has changed since my last release. Display modes are limited without a secure (SSL) connection.) 
- * Your phone display will still time out as usual when the app is running. To avoid this, change your display timeout/lock settings when using the app. (Reason: As above, should be fixed when fullscreen allowed)
- * Only run one instance of the Web Application at a time (when connecting to Server, doesn't matter for the demo). The Server Application can only reliably connect to one Client. (Reason: On each update from Server to Web Application, the Server only sends data that has changed since the last update, and it only stores one version of the last sent data). 
-
 ## Overview
 
 irPitCrew is a mobile application designed to make pitstops in iRacing easier to manage. Its primary goal is to answer the question "When do I need to pit?" in the least distracting way possible so you can keep your eyes on the road. The number of laps until you run out of fuel is displayed in the middle of the display.
@@ -90,4 +83,11 @@ To connect the Web Application, open a web browser on your phone or PC then type
 
 If you have a previous installation of irPitCrew, you can copy your existing Data/ folder over the one in the new installation to keep your old config settings and lap time data (or back up the old Data directory and copy the new one over, safety first)
  
-Optional, check out the configuration settings in "irPitCrew_install/Data/config.txt"
+Optional: check out the configuration settings in "irPitCrew_install/Data/config.txt"
+
+## Work in progress
+
+ * The Web Application currently has some issues with phone orientation and resizing. It only resizes on refresh, so turn the phone sideways and refresh the page. Refresh using web browser controls and/or the green circle at the bottom left of the app. (Reason: HTML, complications with controls inside tables)
+ * Widescreen/fullscreen mode doesn't work well on most mobile browsers. On android, Opera currently has the best fullscreen mode. Other browsers work but the address bar takes up a lot of the screen. (Reason: Mobile browser security has changed since my last release. Display modes are limited without a secure (SSL) connection.) 
+ * Your phone display will still time out as usual when the app is running. To avoid this, change your display timeout/lock settings when using the app. (Reason: As above, should be fixed when fullscreen allowed)
+ * Only run one instance of the Web Application at a time (when connecting to Server, doesn't matter for the demo). The Server Application can only reliably connect to one Client. (Reason: On each update from Server to Web Application, the Server only sends data that has changed since the last update, and it only stores one version of the last sent data).
